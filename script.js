@@ -3,6 +3,7 @@ const button = document.getElementById('button');
 
 // To check if the user shared the screen or not;
 let play = false;
+
 // Prompt user to select a media stram and
 // pass to video element and play
 async function passMediaStream() {
