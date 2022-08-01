@@ -13,7 +13,6 @@ async function passMediaStream() {
           videoElement.onloadedmetadata = () => {
                videoElement.play();
                play = true;
-               console.log(play)
           }
      } catch(error) {
      console.log("oops, video fetch error", error)
@@ -34,7 +33,6 @@ button.addEventListener('click', async function() {
      // Incase the user wants to share again
      play = false;
 })
-console.log("outside", play)
 
 // On Load
 passMediaStream();
