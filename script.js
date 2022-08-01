@@ -6,7 +6,6 @@ let play = false;
 // Prompt user to select a media stram and
 // pass to video element and play
 async function passMediaStream() {
-     
      try {
           const videoStream = await navigator.mediaDevices.getDisplayMedia();
           videoElement.srcObject = videoStream;
@@ -21,16 +20,18 @@ async function passMediaStream() {
 } 
 
 button.addEventListener('click', async function() {
+     // Disable Button
+     button.disabled = true;
      if (play) {
-          // Disable Button
-          button.disabled = true;
           // Start Picture in Picture
           await videoElement.requestPictureInPicture();
-          // Reset Button
-          button.disabled = false
      }else if (!play) {
           passMediaStream();
      }
+     // Reset Button
+     button.disabled = false;
+     // Incase the user wants to share again
+     play = false;
 })
 console.log("outside", play)
 
